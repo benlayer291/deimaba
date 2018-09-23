@@ -6,11 +6,11 @@
   max-width: var(--bmw);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--bsu-lg);
-  padding-right: var(--bsu-lg);
+  padding-left: var(--bsu);
+  padding-right: var(--bsu);
 
   @media(--sm) {
-    padding-left: calc(var(--bsu-xl) + var(--column));
-    padding-right: calc(var(--bsu-xl) + var(--column));
+    padding-left: var(--bsu-xl);
+    padding-right: var(--bsu-xl);
   }
 }

@@ -44,8 +44,8 @@
   --z5: 50;
 
   /* UI */
-  --header-sm: 52px;
-  --header-lg: 118px;
+  --header-sm: 80px;
+  --header-lg: 100%;
   --radius: 2px;
 
   /* Transition */
