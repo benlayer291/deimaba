@@ -1,0 +1,12 @@
+# Global settings applied to the whole site.  
+
+# Specific branch context: Deploys from this branch
+# will take these settings and override their current ones.
+[context.production.environment]
+  NODE_ENV = "production"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "development"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"
