@@ -8,8 +8,8 @@
 
 html {
   min-height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  /* overflow-x: hidden;
+  overflow-y: scroll; */
   font-size: 1em;
   background: var(--main-page-bg);
   color: var(--main-page-color);
@@ -27,4 +27,12 @@ body {
 ::selection {
   background: var(--main-page-bg-selection);
   color: var(--main-page-color-selection);
+}
+
+.main {
+  margin-left: 0;
+
+  @media(--sm) {
+    margin-left: calc(25% + var(--gutter));
+  }
 }

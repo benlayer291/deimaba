@@ -29,6 +29,7 @@
   /* Font */
   --font-primary: 'Palanquin', sans-serif;
   --font-secondary: 'Palanquin Dark', sans-serif;
+  --font-tertiary: 'Yrsa', serif;
 
   /* Global */
   --main-page-bg: var(--white);
@@ -44,7 +45,7 @@
   --z5: 50;
 
   /* UI */
-  --header-sm: 80px;
+  --header-sm: 120px;
   --header-lg: 100%;
   --radius: 2px;
 

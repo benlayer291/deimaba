@@ -11,6 +11,30 @@
         <span class="header__burger"/>
       </button>
     </div>
+    <nav class="header__nav  wrapper">
+      <ul class="header__linklist">
+        <li class="header__link">
+          <a href="#">Work</a>
+          <ul class="header__linklist  header__linklist--secondary">
+            <li class="header__link">
+              <a href="#">filter 1</a>
+            </li>
+            <li class="header__link">
+              <a href="#">filter 2</a>
+            </li>
+            <li class="header__link">
+              <a href="#">filter 3</a>
+            </li>
+          </ul>
+        </li>
+        <li class="header__link">
+          <a href="#">Prints</a>
+        </li>
+        <li class="header__link">
+          <a href="#">About</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
@@ -28,22 +52,29 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--highlight1);
+  background-color: transparent;
   height: var(--header-sm);
+  transition: color var(--trans), background-color var(--trans);
 
   @media(--sm) {
     width: 25%;
     height: var(--header-lg);
   }
+
+  &.is-open {
+    color: var(--white);
+  }
 }
 
 .header__inner {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: row nowrap;
   height: 100%;
   width: 100%;
+  z-index: var(--z1);
 }
 
 .header__toggle {
@@ -83,7 +114,9 @@ export default {
 
     &:before,
     &:after {
+      background-color: var(--white);
       transition:
+        background-color var(--trans),
         top var(--trans),
         transform var(--trans) var(--speed);
     }
@@ -97,6 +130,53 @@ export default {
       top: 0;
       transform: translateZ(0) rotate(-45deg);
     }
+  }
+}
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: var(--bsu-xxl);
+  padding-bottom: var(--bsu-xxl);
+  background-color: var(--white);
+  transform: translateX(-100%) translateZ(0);
+  will-change: transform;
+  transition: color var(--trans), background-color var(--trans);
+
+  .header.is-open & {
+    transform: translateX(0) translateZ(0);
+    transition: transform var(--trans);
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  .header.is-closed & {
+    transform: translateX(100%) translateZ(0);
+    transition: transform var(--trans);
+  }
+}
+
+.header__linklist {
+  margin-bottom: 0;
+}
+
+.header__link {
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+
+  & a {
+    display: block;
+    padding: var(--bsu);
+    margin-left: -var(--bsu);
+  }
+
+  .header__linklist--secondary & {
+    font-size: 14px;
   }
 }
 </style>

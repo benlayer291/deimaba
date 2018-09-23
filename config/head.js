@@ -4,7 +4,7 @@ module.exports = {
     {
       rel: 'stylesheet',
       href:
-        'https://fonts.googleapis.com/css?family=Palanquin|Palanquin+Dark',
+        'https://fonts.googleapis.com/css?family=Palanquin|Palanquin+Dark|Yrsa',
     },
     {
       rel: 'apple-touch-icon',
