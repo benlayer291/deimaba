@@ -51,6 +51,7 @@
 
   /* Transition */
   --speed: .25s;
+  --speed2: .5s;
   --ease: ease;
   --trans: .25s ease;
   --trans-in: cubic-bezier(0, 0, .2, 1);
