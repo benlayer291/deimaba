@@ -1,5 +1,10 @@
 <template>
-  <header class="header">
+  <header
+    :class="{
+      'is-open': isOpen,
+      'is-closed': isClosed,
+    }"
+    class="header">
     <div class="header__inner  wrapper">
       <a
         href="/"
@@ -7,8 +12,9 @@
       >Deima Ba</a>
       <button
         type="button"
-        class="header__toggle">
-        <span class="header__burger"/>
+        class="header__toggle"
+        @click="toggle"
+      ><span class="header__burger"/>
       </button>
     </div>
     <nav class="header__nav  wrapper">
@@ -40,7 +46,29 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isClosed: false,
+      isOpen: false,
+    }
+  },
 
+  methods: {
+    toggle() {
+      if (this.isOpen) {
+        this.isClosed = true
+      } else {
+        this.isOpen = true
+      }
+
+      if (this.isOpen && this.isClosed) {
+        setTimeout(() => {
+          this.isOpen = false
+          this.isClosed = false
+        }, 200)
+      }
+    },
+  },
 }
 </script>
 
@@ -63,6 +91,10 @@ export default {
 
   &.is-open {
     color: var(--white);
+  }
+
+  &.is-open.is-closed {
+    color: var(--black);
   }
 }
 
@@ -98,7 +130,7 @@ export default {
     background-color: var(--black);
     transform: translateZ(0) rotate(0deg);
     transition:
-      top var(--trans) var(--speed),
+      top var(--trans) calc(var(--speed) / 2),
       transform var(--trans);
   }
 
@@ -131,6 +163,14 @@ export default {
       transform: translateZ(0) rotate(-45deg);
     }
   }
+
+  .header.is-open.is-closed & {
+    &:before,
+    &:after {
+      background-color: var(--black);
+      transition: background-color var(--trans);
+    }
+  }
 }
 
 .header__nav {
@@ -148,14 +188,14 @@ export default {
 
   .header.is-open & {
     transform: translateX(0) translateZ(0);
-    transition: transform var(--trans);
+    transition: transform var(--speed) var(--trans-inout);
     color: var(--white);
-    background-color: var(--black);
+    background-color: var(--highlight2);
   }
 
   .header.is-closed & {
     transform: translateX(100%) translateZ(0);
-    transition: transform var(--trans);
+    transition: transform var(--speed) var(--trans-inout);
   }
 }
 
