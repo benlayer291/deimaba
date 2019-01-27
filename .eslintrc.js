@@ -1,28 +1,56 @@
+const resolve = require('path').resolve
+
 module.exports = {
   root: true,
+
   env: {
     browser: true,
+    es6: true,
     node: true
   },
+
   parserOptions: {
     parser: 'babel-eslint'
   },
+
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    '@nuxtjs',
     'airbnb-base',
     'plugin:vue/recommended',
   ],
-  // required to lint *.vue files
+
   plugins: [
     'import',
-    'vue'
+    'vue',
   ],
-  // add your custom rules here
+
+  'settings': {
+    'import/resolver': {
+      webpack: {
+        config: {
+          resolve: {
+            alias: {
+              '@': __dirname,
+              'static': resolve(__dirname, 'static'), // use in template with <img src="@static/nuxt.png" />
+              '@static': resolve(__dirname, 'static'),
+              'assets': resolve(__dirname, 'assets'), // use in template with <img src="@static/nuxt.png" />
+              '@assets': resolve(__dirname, 'assets'),
+              '@plugins': resolve(__dirname, 'plugins'),
+              '@store': resolve(__dirname, '.nuxt/store'),
+              '@router': resolve(__dirname, '.nuxt/router'),
+              '@pages': resolve(__dirname, 'pages'),
+              '@components': resolve(__dirname, 'components')
+            }
+          }
+        }
+      }
+    }
+  },
+
+  // Custom rules
   rules: {
-    'global-require': 'off',
-    'import/no-extraneous-dependencies': 'off',
-    'import/no-unresolved': 'off',
-    'semi': [2, 'never'],
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    "semi": [ 2, "never" ],
   }
 }
