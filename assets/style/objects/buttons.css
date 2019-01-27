@@ -4,30 +4,30 @@
 
 .button {
   display: inline-block;
-  font-family: var(--font-primary);
+  font-family: $font-primary;
   font-size: 12px;
   letter-spacing: .05em;
   text-transform: lowercase;
   text-align: center;
   padding: .95em 2.5em .9em;
-  border: 1px solid var(--grey1);
-  border-radius: var(--radius);
-  transition: color var(--trans), background-color var(--trans);
-  background-color: var(--white);
-  color: var(--grey1);
+  border: 1px solid $grey1);
+  border-radius: $radius);
+  transition: color $trans), background-color $trans;
+  background-color: $white);
+  color: $grey1;
 
   &:matches(:hover, :focus) {
-    background-color: var(--grey1);
-    color: var(--white);
+    background-color: $grey1;
+    color: $white;
   }
 
   &--solid {
-    background-color: var(--grey1);
-    color: var(--white);
+    background-color: $grey1;
+    color: $white;
 
     &:matches(:hover, :focus) {
-      background-color: var(--white);
-      color: var(--grey1);
+      background-color: $white;
+      color: $grey1;
     }
   }
 }

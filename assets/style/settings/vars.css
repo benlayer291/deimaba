@@ -6,58 +6,56 @@
  * Global Variables.
  */
 
-:root {
-  --white: #ffffff;
-  --black: #000000;
-  --grey1: #141414;
-  --grey2: #c8c8c8;
-  --highlight1: #AA022F;
-  --highlight2: #D3B38B;
 
-  /* Base Spacing Units */
-  --bsu-sm: 10px;
-  --bsu: 20px;
-  --bsu-lg: 40px;
-  --bsu-xl: 80px;
-  --bsu-xxl: 160px;
+$white: #ffffff;
+$black: #000000;
+$grey1: #141414;
+$grey2: #c8c8c8;
+$highlight1: #AA022F;
+$highlight2: #D3B38B;
 
-  /* Base Max Width */
-  --bmw: 1440px;
-  --gutter: 40px;
-  --column: calc(1 / 12 * 100%);
+/* Base Spacing Units */
+$bsu-sm: 10px;
+$bsu: 20px;
+$bsu-lg: 40px;
+$bsu-xl: 80px;
+$bsu-xxl: 160px;
 
-  /* Font */
-  --font-primary: 'Palanquin', sans-serif;
-  --font-secondary: 'Palanquin Dark', sans-serif;
+/* Base Max Width */
+$bmw: 1440px;
+$gutter: 40px;
+$column: calc(1 / 12 * 100%);
 
-  /* Global */
-  --main-page-bg: var(--white);
-  --main-page-color: var(--grey1);
-  --main-page-bg-selection: var(--highlight1);
-  --main-page-color-selection: var(--white);
+/* Font */
+$font-primary: 'Palanquin', sans-serif;
+$font-secondary: 'Palanquin Dark', sans-serif;
 
-  /* Layers */
-  --z1: 10;
-  --z2: 20;
-  --z3: 30;
-  --z4: 40;
-  --z5: 50;
+/* Global */
+$main-page-bg: $white);
+$main-page-color: $grey1);
+$main-page-bg-selection: $highlight1);
+$main-page-color-selection: $white);
 
-  /* UI */
-  --header-sm: 52px;
-  --header-lg: 118px;
-  --radius: 2px;
+/* Layers */
+$z1: 10;
+$z2: 20;
+$z3: 30;
+$z4: 40;
+$z5: 50;
 
-  /* Transition */
-  --speed: .25s;
-  --ease: ease;
-  --trans: .25s ease;
-  --trans-in: cubic-bezier(0, 0, .2, 1);
-  --trans-out: cubic-bezier(.4, 0, 1, 1);
-  --trans-inout: cubic-bezier(.77, 0, .175, 1);
-  --trans-bounce: cubic-bezier(.68, -.55, .265, 1.55);
+/* UI */
+$header-sm: 52px;
+$header-lg: 118px;
+$radius: 2px;
 
-}
+/* Transition */
+$speed: .25s;
+$ease: ease;
+$trans: .25s ease;
+$trans-in: cubic-bezier(0, 0, .2, 1);
+$trans-out: cubic-bezier(.4, 0, 1, 1);
+$trans-inout: cubic-bezier(.77, 0, .175, 1);
+$trans-bounce: cubic-bezier(.68, -.55, .265, 1.55);
 
 /**
  * Breakpoints.

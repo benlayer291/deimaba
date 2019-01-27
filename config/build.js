@@ -1,3 +1,10 @@
+const postcssImport = require('postcss-import')
+const postcssSimpleVars = require('postcss-simple-vars')
+const postcssCalc = require('postcss-calc')
+const postcssNested = require('postcss-nested')
+const postcssColorMod = require('postcss-color-mod-function')
+const postcssPresetEnv = require('postcss-preset-env')
+
 module.exports = {
 /*
   ** Run ESLint on save
@@ -16,11 +23,12 @@ module.exports = {
   },
   // Process css with postcss plugins
   postcss: [
-    require('postcss-import')(),
-    require('postcss-calc')(),
-    require('postcss-nested')(),
-    require('postcss-css-variables')(),
-    require('postcss-preset-env')({
+    postcssImport(),
+    postcssSimpleVars(),
+    postcssCalc(),
+    postcssNested(),
+    postcssColorMod(),
+    postcssPresetEnv({
       stage: 1,
       browsers: ['last 2 versions', 'ie >= 11'],
     }),

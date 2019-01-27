@@ -24,10 +24,10 @@
 
 .grid--rigid {
   justify-content: flex-start;
-  margin-left: calc(var(--gutter) * -1);
+  margin-left: calc($gutter * -1);
 
   & > .grid__item {
-    padding-left: var(--gutter);
+    padding-left: $gutter;
   }
 }
 

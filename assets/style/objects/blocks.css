@@ -3,12 +3,12 @@
 \* ------------------------------------ */
 
 .block {
-  padding-top: var(--bsu-lg);
-  padding-bottom: calc(var(--bsu-lg) - var(--bsu));
+  padding-top: $bsu-lg;
+  padding-bottom: calc($bsu-lg - $bsu);
 
   @media (--sm) {
-    padding-top: var(--bsu-xl);
-    padding-bottom: calc(var(--bsu-xl) - var(--bsu));
+    padding-top: $bsu-xl;
+    padding-bottom: calc($bsu-xl - $bsu);
   }
 
   & + .block {

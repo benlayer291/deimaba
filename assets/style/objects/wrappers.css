@@ -3,14 +3,14 @@
 \*------------------------------------ */
 
 .wrapper {
-  max-width: var(--bmw);
-  margin-left: auto;
+  max-width: $bmw;
+  padding-right: $bsu-lg;
+  padding-left: $bsu-lg;
   margin-right: auto;
-  padding-left: var(--bsu-lg);
-  padding-right: var(--bsu-lg);
+  margin-left: auto;
 
-  @media(--sm) {
-    padding-left: calc(var(--bsu-xl) + var(--column));
-    padding-right: calc(var(--bsu-xl) + var(--column));
+  @media (--sm) {
+    padding-right: calc($bsu-xl + $column);
+    padding-left: calc($bsu-xl + $column);
   }
 }

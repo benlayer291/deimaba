@@ -9,7 +9,7 @@
   height: 0;
   height: auto;
   overflow: hidden;
-  background-color: var(--highlight1);
+  background-color: $highlight1;
 
   &__item,
   & iframe,

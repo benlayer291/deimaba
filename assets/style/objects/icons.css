@@ -5,10 +5,10 @@
 .i-social {
   width: 20px;
   height: 20px;
-  color: var(--grey1);
-  transition: color var(--trans);
+  color: $grey1;
+  transition: color $trans;
 
   &:hover {
-    color: var(--highlight1);
+    color: $highlight1;
   }
 }

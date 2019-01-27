@@ -30,7 +30,7 @@ h5,
 .t-h5,
 h6,
 .t-h6 {
-  font-family: var(--font-primary);
+  font-family: $font-primary;
   font-weight: normal;
   text-transform: lowercase;
 }
@@ -107,7 +107,7 @@ h6,
 
 p,
 address {
-  font-family: var(--font-primary);
+  font-family: $font-primary;
   font-size: 16px;
   line-height: 1.5;
   font-weight: normal;
@@ -119,17 +119,17 @@ address {
   }
 
   & a {
-    border-bottom: thin solid var(--highlight1);
-    transition: color var(--trans);
+    border-bottom: thin solid $highlight1;
+    transition: color $trans;
 
     &:hover {
-      color: var(--highlight1);
+      color: $highlight1;
     }
   }
 }
 
 .t-para {
-  font-family: var(--font-primary);
+  font-family: $font-primary;
   font-size: 16px;
   line-height: 1.5;
   font-weight: normal;
@@ -142,11 +142,11 @@ address {
 }
 
 .t-link {
-  border-bottom: thin solid var(--highlight1);
-  transition: color var(--trans);
+  border-bottom: thin solid $highlight1;
+  transition: color $trans;
 
   &:hover {
-    color: var(--highlight1);
+    color: $highlight1;
   }
 }
 
