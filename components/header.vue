@@ -9,7 +9,7 @@
       <a
         href="/"
         class="header__logo  t-logo"
-      >Deima Ba</a>
+      >DeimaBa</a>
       <button
         type="button"
         class="header__toggle"
@@ -127,6 +127,7 @@ export default {
   @media(--sm) {
     width: 25%;
     height: var(--header-lg);
+    border-right: 1px solid var(--highlight2);
   }
 
   &.is-open {
@@ -147,10 +148,23 @@ export default {
   height: 100%;
   width: 100%;
   z-index: var(--z1);
+
+  @media(--sm) {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-left: var(--bsu-lg);
+    padding-right: var(--bsu-lg);
+  }
 }
 
 .header__toggle {
+  display: block;
   padding: var(--bsu-lg) var(--bsu);
+
+  @media(--sm) {
+    display: none;
+  }
 }
 
 .header__burger {
@@ -237,10 +251,24 @@ export default {
     transform: translateX(100%) translateZ(0);
     transition: transform var(--speed) var(--trans-inout);
   }
+
+  @media (--sm) {
+    position: relative;
+    transform: translateX(0) translateZ(0);
+    transition: none;
+    width: 100%;
+    height: auto;
+    padding-left: var(--bsu-lg);
+    padding-right: var(--bsu-lg);
+  }
 }
 
 .header__linklist {
   margin-bottom: 0;
+}
+
+.header__linklist--secondary {
+  padding-left: var(--bsu);
 }
 
 .header__link,
@@ -257,6 +285,17 @@ export default {
     display: inline-block;
     padding: var(--bsu);
     margin-left: -var(--bsu);
+  }
+
+  @media(--sm) {
+    opacity: 1;
+    visibility: visible;
+    transform: rotateX(0);
+
+    & a {
+      padding: var(--bsu-sm);
+      margin-left: -var(--bsu-sm);
+    }
   }
 }
 
@@ -290,9 +329,23 @@ export default {
   }
 
   &.is-open {
+    &:before {
+      transform: rotate(180deg) translateZ(0);
+    }
 
     &:after {
-      transform: rotate(0deg) translateZ(0);
+      transform: rotate(180deg) translateZ(0);
+    }
+  }
+
+  @media(--sm) {
+    padding: var(--bsu-sm) var(--bsu-lg) var(--bsu-sm) var(--bsu-sm);
+    margin-left: -var(--bsu-sm);
+
+    &:before,
+    &:after {
+      top: 1.4em;
+      background-color: var(--black);
     }
   }
 }
